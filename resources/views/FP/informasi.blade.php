@@ -53,9 +53,9 @@
                         
                         <!-- Action Button -->
                         <div class="flex justify-start">
-                            <button class="text-blue-600 hover:text-blue-800 text-sm font-medium hover:underline transition-colors">
+                            <a href="{{ route('deepinformasi') }}" class="text-blue-600 hover:text-blue-800 text-sm font-medium hover:underline transition-colors">
                                 Baca Selengkapnya →
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -64,19 +64,39 @@
         </div>
     </section>
 
-    <style>
-        .hover\:transform:hover {
-            transform: scale(1.02);
-        }
-        
-        @media (max-width: 768px) {
-            .flex-wrap {
-                flex-direction: column;
-            }
-            
-            .space-y-6 > div {
-                margin-bottom: 1rem;
-            }
-        }
-    </style>
+    <!-- Navigasi informasi -->
+    <div class="flex justify-center mt-8 mb-16">
+        <div class="flex gap-2 items-center flex-wrap">
+            @php
+                $currentPage = request('page', 1);
+                $totalPages = 100;
+            @endphp
+
+            <!-- Tombol halaman awal -->
+            <a href="?page=1" class="w-9 h-9 flex items-center justify-center rounded-full border 
+            {{ $currentPage == 1 ? 'bg-[#4263eb] text-white' : 'text-gray-700 border-gray-300 hover:bg-[#4263eb] hover:text-white' }}">
+                1
+            </a>
+
+            @if ($currentPage > 4)
+                <span class="text-gray-400">...</span>
+            @endif
+
+            @for ($i = max(2, $currentPage - 2); $i <= min($totalPages - 1, $currentPage + 2); $i++)
+                <a href="?page={{ $i }}" class="w-9 h-9 flex items-center justify-center rounded-full border 
+                    {{ $currentPage == $i ? 'bg-[#4263eb] text-white' : 'text-gray-700 border-gray-300 hover:bg-[#4263eb] hover:text-white' }}">
+                    {{ $i }}
+                </a>
+            @endfor
+
+            @if ($currentPage < $totalPages - 3)
+                <span class="text-gray-400">...</span>
+            @endif
+
+            <a href="?page={{ $totalPages }}" class="w-9 h-9 flex items-center justify-center rounded-full border 
+            {{ $currentPage == $totalPages ? 'bg-[#4263eb] text-white' : 'text-gray-700 border-gray-300 hover:bg-[#4263eb] hover:text-white' }}">
+                {{ $totalPages }}
+            </a>
+        </div>
+    </div>
 </x-layout>

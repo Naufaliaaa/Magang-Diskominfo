@@ -34,7 +34,7 @@
         </div>
 
         <!-- Artikel lainya -->
-        <h2 class="text-2xl font-bold mt-10 mb-4 text-center">Artikel lainya</h2>
+        <h2 class="text-2xl font-bold mt-10 mb-4 text-center">Artikel lainnya</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             @foreach ([
                 ['title' => 'Upacara Bendera: Melatih Disiplin Sejak Dini', 'img' => 'img/artikel1.jpg', 'desc' => 'Kegiatan rutin upacara bendera setiap hari Senin diikuti seluruh siswa...'],
@@ -55,7 +55,7 @@
                     </div>
                 </div>
                 <div class="px-4 pb-4">
-                    <a href="#" class="inline-block bg-[#4263eb] text-white text-sm font-medium py-2 px-4 rounded hover:bg-blue-700 transition">
+                    <a href="/deepartikel" class="inline-block bg-[#4263eb] text-white text-sm font-medium py-2 px-4 rounded hover:bg-blue-700 transition">
                         Lihat Detail
                     </a>
                 </div>
@@ -67,22 +67,19 @@
         <div class="flex justify-center mt-8">
             <div class="flex gap-2 items-center flex-wrap">
                 @php
-                    $currentPage = request('page', 1);
+                    $currentPage = request('page', 1);  
                     $totalPages = 100;
                 @endphp
 
-                <!-- Tombol halaman awal -->
                 <a href="?page=1" class="w-9 h-9 flex items-center justify-center rounded-full border 
                 {{ $currentPage == 1 ? 'bg-[#4263eb] text-white' : 'text-gray-700 border-gray-300 hover:bg-[#4263eb] hover:text-white' }}">
                     1
                 </a>
 
-                <!-- Titik-titik sebelum halaman aktif -->
                 @if ($currentPage > 4)
                     <span class="text-gray-400">...</span>
                 @endif
 
-                <!-- Halaman sekitar halaman aktif -->
                 @for ($i = max(2, $currentPage - 2); $i <= min($totalPages - 1, $currentPage + 2); $i++)
                     <a href="?page={{ $i }}" class="w-9 h-9 flex items-center justify-center rounded-full border 
                         {{ $currentPage == $i ? 'bg-[#4263eb] text-white' : 'text-gray-700 border-gray-300 hover:bg-[#4263eb] hover:text-white' }}">
@@ -90,18 +87,15 @@
                     </a>
                 @endfor
 
-                <!-- Titik-titik setelah halaman aktif -->
                 @if ($currentPage < $totalPages - 3)
                     <span class="text-gray-400">...</span>
                 @endif
 
-                <!-- Tombol halaman terakhir -->
                 <a href="?page={{ $totalPages }}" class="w-9 h-9 flex items-center justify-center rounded-full border 
                 {{ $currentPage == $totalPages ? 'bg-[#4263eb] text-white' : 'text-gray-700 border-gray-300 hover:bg-[#4263eb] hover:text-white' }}">
                     {{ $totalPages }}
                 </a>
             </div>
         </div>
-
     </section>
 </x-layout>

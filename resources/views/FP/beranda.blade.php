@@ -55,7 +55,9 @@
                     <div class="mt-4 text-xs text-gray-500 border-t pt-3">
                         <i class="fas fa-calendar-alt mr-1 text-green-500"></i> {{ $artikel['date'] }}
                     </div>
-                    <a href="#" class="mt-3 inline-block bg-blue-500 hover:bg-blue-600 text-white text-sm px-4 py-2 rounded font-semibold">Lihat Detail</a>
+                    <a href="{{ route('deepartikel') }}" class="mt-3 inline-block bg-blue-500 hover:bg-blue-600 text-white text-sm px-4 py-2 rounded font-semibold">
+                        Lihat Detail
+                    </a>
                 </div>
             </div>
             @endforeach
@@ -70,12 +72,12 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-gray-800">
                 @foreach([
-                    ['title' => 'Sejarah', 'desc' => 'Mengenal jauh lebih dekat dengan SMPN 1 Cimaung melalui dokumentasi sejarahnya.', 'icon' => 'sejarah.png', 'link' => '/profile/sejarah'],
-                    ['title' => 'Visi dan Misi', 'desc' => 'Terwujudnya Peserta Didik yang Berakhlak Mulia, Mandiri, dan Berprestasi.', 'icon' => 'visidanmisi.png', 'link' => '/profile/visi-misi'],
-                    ['title' => 'Struktur Organisasi', 'desc' => 'Informasi para pejabat dan pegawai di lingkungan SMPN 1 Cimaung.', 'icon' => 'organisasi.png', 'link' => '/profile/struktur-organisasi'],
-                    ['title' => 'Sarana dan Prasarana', 'desc' => 'Informasi lengkap sarana prasarana sekolah kami.', 'icon' => 'sarana.png', 'link' => '/profile/sarana-prasarana'],
-                    ['title' => 'Guru', 'desc' => 'Informasi daftar nama guru disertai dengan foto.', 'icon' => 'jomblo.png', 'link' => '/profile/guru'],
-                    ['title' => 'Osis', 'desc' => 'Organisasi Siswa Intra Sekolah SMPN 1 Cimaung.', 'icon' => 'organisasi.png', 'link' => '/profile/osis'],
+                    ['title' => 'Sejarah', 'desc' => 'Mengenal jauh lebih dekat dengan SMPN 1 Cimaung melalui dokumentasi sejarahnya.', 'icon' => 'sejarah.png', 'link' => '/profile#sejarah'],
+                    ['title' => 'Visi dan Misi', 'desc' => 'Terwujudnya Peserta Didik yang Berakhlak Mulia, Mandiri, dan Berprestasi.', 'icon' => 'visidanmisi.png', 'link' => '/profile#visi-misi'],
+                    ['title' => 'Struktur Organisasi', 'desc' => 'Informasi para pejabat dan pegawai di lingkungan SMPN 1 Cimaung.', 'icon' => 'organisasi.png', 'link' => '/profile#struktur-organisasi'],
+                    ['title' => 'Sarana dan Prasarana', 'desc' => 'Informasi lengkap sarana prasarana sekolah kami.', 'icon' => 'sarana.png', 'link' => '/profile#sarana-prasarana'],
+                    ['title' => 'Guru', 'desc' => 'Informasi daftar nama guru disertai dengan foto.', 'icon' => 'jomblo.png', 'link' => '/profile#guru'],
+                    ['title' => 'Osis', 'desc' => 'Organisasi Siswa Intra Sekolah SMPN 1 Cimaung.', 'icon' => 'organisasi.png', 'link' => '/profile#osis'],
                 ] as $item)
                 <div class="flex flex-col items-center text-center animate-zoom-in">
                     <img src="{{ asset('img/' . $item['icon']) }}" class="w-14 mb-4" />
@@ -90,47 +92,42 @@
         </div>
     </section>
 
-        <!-- Informasi Sekolah -->
-        <div class="bg-white py-12 px-4 md:px-12 animate-fade-in-up">
-            
-            <!-- Judul Tengah -->
-            <div class="text-center mb-4">
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 flex justify-center items-center gap-2">
-                    <i class="fas fa-bullhorn text-blue-500"></i> Informasi Sekolah
-                </h2>
-                <div class="border-t-2 w-16 mt-2 mx-auto border-gray-300"></div>
-            </div>
+    <!-- Informasi Sekolah -->
+    <div class="bg-white py-12 px-4 md:px-12 animate-fade-in-up">
+        <div class="text-center mb-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 flex justify-center items-center gap-2">
+                <i class="fas fa-bullhorn text-blue-500"></i> Informasi Sekolah
+            </h2>
+            <div class="border-t-2 w-16 mt-2 mx-auto border-gray-300"></div>
+        </div>
 
-            <!-- Tombol Kanan Atas -->
-            <div class="flex justify-end mb-6">
-                <a href="/informasi" class="text-blue-600 text-sm font-semibold hover:underline transition">
-                    Lihat Semua Informasi
-                </a>
-            </div>
+        <div class="flex justify-end mb-6">
+            <a href="/informasi" class="text-blue-600 text-sm font-semibold hover:underline transition">
+                Lihat Semua Informasi
+            </a>
+        </div>
 
-            <!-- Konten Informasi -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                @foreach([
-                    ['title' => 'Penerimaan Siswa Baru 2025', 'desc' => 'PPDB SMPN 1 CIMAUNG dimulai 1 Juli 2025. Persiapkan berkas dan daftar secara online.', 'img' => 'img/artikel1.jpg'],
-                    ['title' => 'Jadwal Ujian Semester Ganjil', 'desc' => 'Ujian dilaksanakan mulai 10 September 2025. Harap siswa mempersiapkan diri dengan baik.', 'img' => 'img/artikel2.jpg'],
-                    ['title' => 'Daftar Ulang Siswa Baru', 'desc' => 'Jadwal daftar ulang untuk siswa baru: 15–17 Juli 2025, di ruang TU.', 'img' => 'img/artikel3.jpg'],
-                ] as $info)
-                <div class="bg-gray-50 border rounded-lg shadow hover:shadow-md transition overflow-hidden flex flex-col">
-                    <img src="{{ asset($info['img']) }}" alt="informasi" class="w-full h-40 object-cover">
-                    <div class="p-4 flex flex-col justify-between flex-grow">
-                        <div>
-                            <h3 class="text-md font-semibold text-gray-800 mb-2">{{ $info['title'] }}</h3>
-                            <p class="text-sm text-gray-600">{{ $info['desc'] }}</p>
-                        </div>
-                        <div class="mt-4 flex justify-start">
-                            <a href="/informasi" class="bg-blue-500 hover:bg-blue-600 text-white text-xs font-semibold px-4 py-2 rounded transition">
-                                Lihat Detail
-                            </a>
-                        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            @foreach([
+                ['title' => 'Penerimaan Siswa Baru 2025', 'desc' => 'PPDB SMPN 1 CIMAUNG dimulai 1 Juli 2025. Persiapkan berkas dan daftar secara online.', 'img' => 'img/artikel1.jpg'],
+                ['title' => 'Jadwal Ujian Semester Ganjil', 'desc' => 'Ujian dilaksanakan mulai 10 September 2025. Harap siswa mempersiapkan diri dengan baik.', 'img' => 'img/artikel2.jpg'],
+                ['title' => 'Daftar Ulang Siswa Baru', 'desc' => 'Jadwal daftar ulang untuk siswa baru: 15–17 Juli 2025, di ruang TU.', 'img' => 'img/artikel3.jpg'],
+            ] as $info)
+            <div class="bg-gray-50 border rounded-lg shadow hover:shadow-md transition overflow-hidden flex flex-col">
+                <img src="{{ asset($info['img']) }}" alt="informasi" class="w-full h-40 object-cover">
+                <div class="p-4 flex flex-col justify-between flex-grow">
+                    <div>
+                        <h3 class="text-md font-semibold text-gray-800 mb-2">{{ $info['title'] }}</h3>
+                        <p class="text-sm text-gray-600">{{ $info['desc'] }}</p>
+                    </div>
+                    <div class="mt-4 flex justify-start">
+                        <a href="{{ route('deepinformasi') }}" class="bg-blue-500 hover:bg-blue-600 text-white text-xs font-semibold px-4 py-2 rounded transition">
+                            Lihat Detail
+                        </a>
                     </div>
                 </div>
-                @endforeach
             </div>
+            @endforeach
         </div>
     </div>
 </x-layout>

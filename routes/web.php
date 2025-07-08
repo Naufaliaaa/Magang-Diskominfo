@@ -25,10 +25,46 @@ Route::get('/kontak', function () {
 
 
 
+
+
+
+
+//Halaman Detail
+Route::get('/guru', function () {
+    return view('FP/Detail-Halaman/guru');
+});
+
+Route::get('/osis-lainnya', function () {
+    return view('FP.Detail-Halaman.osis');
+})->name('osislainnya');
+
+Route::get('/deepartikel', function () {
+    return view('FP.Detail-Halaman.deepartikel');
+})->name('deepartikel');
+
+Route::get('/deepinformasi', function () {
+    return view('FP.Detail-Halaman.deepinformasi');
+})->name('deepinformasi');
+
+
+
+
+
+
+
 //Back Page
 Route::get('/login', function () {
     return view('BP/login');
 });
+
+Route::get('/admin', function () {
+    return view('BP/admin');
+});
+
+
+
+
+
 
 
 //Kebijakan/Layanan
