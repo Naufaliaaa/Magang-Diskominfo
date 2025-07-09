@@ -22,7 +22,7 @@
 
     <div class="flex-grow flex flex-col">
         <!-- Navbar Komponen -->
-        <x-navbar></x-navbr>
+        <x-navbar></x-navbar>
 
         <!-- Halaman Utama -->
         <main class="flex-grow">

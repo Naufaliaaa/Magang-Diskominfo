@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -95,12 +96,21 @@
             </div>
 
             <!-- Header -->
-            <div class="text-center mb-8">
+            <div class="text-center mb-6">
                 <h2 class="text-white text-2xl sm:text-3xl font-bold tracking-tight">Selamat datang kembali</h2>
                 <p class="text-white/70 text-sm mt-2">Masukan Email dan password dengan benar</p>
             </div>
 
-            <form method="POST" action="#" class="space-y-6">
+            <!-- Error Message -->
+            @if(session('error'))
+                <div class="mb-4 bg-red-100 text-red-600 text-sm text-center rounded-lg px-4 py-2 shadow">
+                    {{ session('error') }}
+                </div>
+            @endif
+
+            <form method="POST" action="{{ url('/login') }}" class="space-y-6">
+                @csrf
+
                 <!-- Email -->
                 <div>
                     <label for="email" class="block text-white text-sm font-medium mb-2">Alamat Email</label>
@@ -133,7 +143,6 @@
                     <a href="https://wa.me/6283829586688" target="_blank" class="text-white/80 hover:text-white text-sm transition-colors duration-300">
                         Jika lupa password-nya hubungi admin
                     </a>
-
                 </div>
 
                 <!-- Tombol -->
@@ -143,8 +152,6 @@
                 >
                     Masuk
                 </button>
-
-
             </form>
         </div>
     </div>

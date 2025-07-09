@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 //Front Page
 Route::get('/', function () {
@@ -55,14 +57,43 @@ Route::get('/deepinformasi', function () {
 //Back Page
 Route::get('/login', function () {
     return view('BP/login');
+})->name('login');
+
+Route::post('/login', function (Request $request) {
+    $emailPercobaan = 'smpn1cimaung@gmail.com';
+    $passwordPercobaan = 'admin1234';
+
+    if ($request->email === $emailPercobaan && $request->password === $passwordPercobaan) {
+        return redirect('/dbartikel');
+    }
+
+    return redirect()->back()->with('error', 'Email atau Password salah!');
+})->name('login.process');
+
+Route::post('/logout', function () {
+    Auth::logout();
+    return redirect('/'); // redirect ke halaman beranda
+})->name('logout');
+
+Route::get('/dbartikel', function () {
+    return view('BP/dbartikel');
 });
 
-Route::get('/admin', function () {
-    return view('BP/admin');
+Route::get('/dbinformasi', function () {
+    return view('BP/dbinformasi');
 });
 
+Route::get('/guru', function () {
+    return view('BP/guru');
+});
 
+Route::get('/osis', function () {
+    return view('BP/osis');
+});
 
+Route::get('/organisasi', function () {
+    return view('BP/organisasi');
+});
 
 
 
