@@ -1,6 +1,5 @@
 <aside class="w-64 bg-blue-800 text-white flex flex-col">
     <div class="flex items-center justify-center h-20 border-b border-blue-700">
-         <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/png">
         <img src="{{ asset('img/logo.png') }}" alt="Logo SMPN 1 CIMAUNG" class="h-12 mr-2">
         <span class="font-bold text-lg">SMPN 1 CIMAUNG</span>
     </div>
