@@ -98,6 +98,36 @@ Route::get('/organisasi', function () {
 
 
 
+
+
+
+//Halaman Tambah
+Route::get('/tambah-artikel', function () {
+    return view('BP/Plus/tambah-artikel');
+})->name('tambah-artikel');
+
+Route::get('/tambah-informasi', function () {
+    return view('BP/Plus/tambah-informasi');
+})->name('tambah-informasi');
+
+Route::get('/tambah-guru', function () {
+    return view('BP/Plus/tambah-guru');
+})->name('tambah-guru');
+
+Route::get('/tambah-osis', function () {
+    return view('BP/Plus/tambah-osis');
+})->name('tambah-osis');
+
+Route::get('/tambah-organisasi', function () {
+    return view('BP/Plus/tambah-organisasi');
+})->name('tambah-organisasi');
+
+
+
+
+
+
+
 //Kebijakan/Layanan
 Route::get('/kebijakan', function () {
     return view('Layanan/kebijakan');

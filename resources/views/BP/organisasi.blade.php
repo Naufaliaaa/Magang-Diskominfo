@@ -30,10 +30,11 @@
             </div>
 
              <!-- Tombol Tambah (+) -->
-            <a href="{{ url('/guru/tambah') }}"
-               class="fixed bottom-6 right-6 bg-blue-700 hover:bg-blue-800 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg transition transform hover:scale-105 z-50"
-               title="Tambah Guru">
+             <a href="{{ route('tambah-organisasi') }}"
+             class="fixed bottom-6 right-6 bg-blue-700 hover:bg-blue-800 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg transition transform hover:scale-105 z-50"
+             title="Tambah Artikel">
                 <i class="fas fa-plus text-xl"></i>
+            </a>
             </a>
         </main>
     </div>

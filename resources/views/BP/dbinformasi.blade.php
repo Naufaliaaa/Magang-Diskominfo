@@ -50,12 +50,11 @@
             </div>
 
             <!-- Tombol Tambah (+) -->
-            <a href="{{ url('/informasi/tambah') }}"
-               class="fixed bottom-6 right-6 bg-blue-700 hover:bg-blue-800 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg transition transform hover:scale-105 z-50"
-               title="Tambah Informasi">
+           <a href="{{ route('tambah-informasi') }}"
+             class="fixed bottom-6 right-6 bg-blue-700 hover:bg-blue-800 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg transition transform hover:scale-105 z-50"
+             title="Tambah Artikel">
                 <i class="fas fa-plus text-xl"></i>
             </a>
-        </main>
     </div>
 </body>
 </html>
