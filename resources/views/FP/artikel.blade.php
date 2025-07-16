@@ -11,8 +11,8 @@
                 </div>
             </div>
 
-            <!-- Daftar artikel terbaru -->
-            <div class="space-y-4 overflow-y-auto max-h-[350px] pr-2">
+            <!-- Daftar artikel terbaru dengan kotak -->
+            <div class="bg-white border rounded-lg shadow p-4 space-y-4 overflow-y-auto max-h-[350px] pr-2">
                 @foreach ([
                     ['title' => 'Kegiatan Pramuka Membentuk Kemandirian Siswa', 'img' => 'img/artikel2.jpg', 'date' => '05 Juli 2025'],
                     ['title' => 'Juara Lomba Kebersihan Sekolah Kabupaten Bandung', 'img' => 'img/artikel3.jpg', 'date' => '02 Juli 2025'],
@@ -33,7 +33,7 @@
             </div>
         </div>
 
-        <!-- Artikel lainya -->
+        <!-- Artikel lainnya -->
         <h2 class="text-2xl font-bold mt-10 mb-4 text-center">Artikel lainnya</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             @foreach ([
