@@ -32,8 +32,8 @@ Route::get('/kontak', function () {
 
 
 //Halaman Detail
-Route::get('/guru', function () {
-    return view('FP/Detail-Halaman/guru');
+Route::get('/deepguru', function () {
+    return view('FP/Detail-Halaman/deepguru');
 });
 
 Route::get('/osis-lainnya', function () {

@@ -199,7 +199,7 @@
         <div class="relative mb-4 text-center">
             <h2 class="text-3xl font-bold text-gray-800">Guru</h2>
             <div class="border-t-2 w-16 mt-2 mx-auto border-blue-500"></div>
-            <a href="{{ url('/guru') }}" class="absolute right-0 top-0 text-blue-600 font-semibold hover:underline transition-colors duration-300">Guru lainnya</a>
+           <a href="{{ url('/deepguru') }}" class="absolute right-0 top-0 text-blue-600 font-semibold hover:underline transition-colors duration-300">Guru lainnya</a>Guru lainnya</a>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mt-6">
